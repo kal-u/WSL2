@@ -155,11 +155,10 @@ Ajouter les 2 lignes suivantes à la fin du fichier
 ### Création d'une arborescence dédiée
 
     sudo mkdir -p /opt/recon
-    sudo mkdir -p /opt/linux
-    sudo mkdir -p /opt/web
+    sudo mkdir -p /opt/linux/privesc
     sudo mkdir -p /opt/windows/privesc
     sudo mkdir -p /opt/impacket
-
+    sudo mkdir -p /opt/web
 
 ### Installation de la suite Impacket
     cd /opt
@@ -169,9 +168,11 @@ Ajouter les 2 lignes suivantes à la fin du fichier
     python3 ./setup.py install
 
 ### Installation de evil-winrm
+    cd /opt
     gem install evil-winrm winrm-fs stringio
 
 ### Installation de pywsus
+    cd /opt
     git clone https://github.com/GoSecure/pywsus
     virtualenv -p /usr/bin/python3 ./venv
     source ./venv/bin/activate
@@ -179,16 +180,16 @@ Ajouter les 2 lignes suivantes à la fin du fichier
 
 
 ### Téléchargement de procdump
+    cd /opt/windows
     wget https://live.sysinternals.com/procdump.exe
     wget https://live.sysinternals.com/procdump64.exe
 
 
 ### Téléchargement de wordlists
-    wget https://raw.githubusercontent.com/berzerk0/Probable-Wordlists/master/Dictionary-Style/Technical_and_Default/Password_Default_ProbWL.txt
-    wget https://raw.githubusercontent.com/berzerk0/Probable-Wordlists/master/Dictionary-Style/Technical_and_Default/Username_Default_ProbWL.txt
-    apt install wordlists
-
+    sudo apt install wordlists
     cd /usr/share/wordlists
+    sudo wget https://raw.githubusercontent.com/berzerk0/Probable-Wordlists/master/Dictionary-Style/Technical_and_Default/Password_Default_ProbWL.txt
+    sudo wget https://raw.githubusercontent.com/berzerk0/Probable-Wordlists/master/Dictionary-Style/Technical_and_Default/Username_Default_ProbWL.txt
     sudo wget https://gist.githubusercontent.com/TylerRockwell/1f24a4b237627811b449db9f90804e84/raw/6371edc42c0b8ce77552b8ff995d858629f38ddd/100_common_passwords
     sudo wget https://gist.githubusercontent.com/TylerRockwell/e66bb76374aba34ed430dab2617e9d4a/raw/9733e873326835ed91fe63cc269d69b0cb559160/1000_common_passwords
     sudo wget https://gist.githubusercontent.com/TylerRockwell/ab97b16045c3993edf528f8012b8fffa/raw/8c28863bc8361c14903ba11b99122473ed05ec0a/10000_common_passwords
@@ -218,11 +219,11 @@ Ajouter les 2 lignes suivantes à la fin du fichier
     wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1
 
 ### Récupération de LinPeas
-    cd /opt/linux
+    cd /opt/linux/privesc
     wget https://raw.githubusercontent.com/carlospolop/PEASS-ng/master/linPEAS/linpeas.sh
 
 ### Récupération de PowerUp
-    cd /opt/windows
+    cd /opt/windows/privesc
     wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Privesc/PowerUp.ps1
 
 ### Réccupération du repo de scripts Powershell Nishang
@@ -258,13 +259,13 @@ Ajouter les 2 lignes suivantes à la fin du fichier
     cd weevely3/
     pip3 install -r requirements.txt --upgrade
 
-
 ### Installation de NMAP Automator
     cd /opt/recon
     wget https://raw.githubusercontent.com/21y4d/nmapAutomator/master/nmapAutomator.sh
     chmod u+x ./nmapAutomator.sh
 
 ### SQLi Dictionary
+    cd /opt/web
     wget https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/master/attack/sql-injection/detect/xplatform.txt
 
 ### Burp Suite Jython
