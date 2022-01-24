@@ -82,18 +82,18 @@ Voici la liste des distributions valides qui peuvent être installées.
 
 ### Afin de faire fonctionner les mises à jour correctement, j'ai du effectuer les actions suivantes :
 
-    # wget --no-check-certificate https://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2020.2_all.deb
-    # dpkg -i kali-archive-keyring_2020.2_all.deb
-    # apt update
+    wget --no-check-certificate https://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2020.2_all.deb
+    dpkg -i kali-archive-keyring_2020.2_all.deb
+    apt update
 
 ### S'il y a une erreur par rapport à libcrypt, procéder comme suit :
 
-    # cd /tmp
-    # chmod 1777 /tmp
-    # apt -y download libcrypt1
-    # dpkg-deb -x libcrypt1_1%3a4.4.25-2_amd64.deb  .
-    # cp -av lib/x86_64-linux-gnu/* /lib/x86_64-linux-gnu/
-    # apt -y --fix-broken install
+    cd /tmp
+    chmod 1777 /tmp
+    apt -y download libcrypt1
+    dpkg-deb -x libcrypt1_1%3a4.4.25-2_amd64.deb  .
+    cp -av lib/x86_64-linux-gnu/* /lib/x86_64-linux-gnu/
+    apt -y --fix-broken install
 
     
 ## Accès en graphique
@@ -146,7 +146,7 @@ Ajouter les 2 lignes suivantes à la fin du fichier
 
 
 ## Installation des packages pour passer d'une Kali de base à une CTF War Machine !
-    # apt-get install -y binwalk bloodhound burpsuite crackmapexec default-mysql-client dirb dirbuster dnsrecon enum4linux exploitdb exploitdb ffuf firefox-esr ftp-ssl gedit git gobuster hashcat hydra john joomscan libjenkins-htmlunit-core-js-java lightdm-remote-session-freerdp2 mariadb-client metasploit-framework netcat-traditional netdiscover nfs-common nikto nmap openvpn powershell-empire python3-pip python3-scapy python3-shodan seclists smbclient smbmap smtp-user-enum sqlite3 sqlmap sslscan sublist3r traceroute webext-foxyproxy wireshark wordlists wpscan wpscan zaproxy zsh
+    apt-get install -y binwalk bloodhound burpsuite crackmapexec default-mysql-client dirb dirbuster dnsrecon enum4linux exploitdb exploitdb ffuf firefox-esr ftp-ssl gedit git gobuster hashcat hydra john joomscan libjenkins-htmlunit-core-js-java lightdm-remote-session-freerdp2 mariadb-client metasploit-framework netcat-traditional netdiscover nfs-common nikto nmap openvpn powershell-empire python3-pip python3-scapy python3-shodan seclists smbclient smbmap smtp-user-enum sqlite3 sqlmap sslscan sublist3r traceroute webext-foxyproxy wireshark wordlists wpscan wpscan zaproxy zsh
   
   
 ### Installation des modules Python de base
