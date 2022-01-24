@@ -146,7 +146,7 @@ Ajouter les 2 lignes suivantes à la fin du fichier
 
 
 ## Installation des packages pour passer d'une Kali de base à une CTF War Machine !
-    # **apt-get install -y binwalk bloodhound burpsuite crackmapexec default-mysql-client dirb dirbuster dnsrecon enum4linux exploitdb exploitdb ffuf firefox-esr ftp-ssl gedit git gobuster hashcat hydra john joomscan libjenkins-htmlunit-core-js-java lightdm-remote-session-freerdp2 mariadb-client metasploit-framework netcat-traditional netdiscover nfs-common nikto nmap openvpn powershell-empire python3-pip python3-scapy python3-shodan seclists smbclient smbmap smtp-user-enum sqlite3 sqlmap sslscan sublist3r traceroute webext-foxyproxy wireshark wordlists wpscan wpscan zaproxy zsh
+    # apt-get install -y binwalk bloodhound burpsuite crackmapexec default-mysql-client dirb dirbuster dnsrecon enum4linux exploitdb exploitdb ffuf firefox-esr ftp-ssl gedit git gobuster hashcat hydra john joomscan libjenkins-htmlunit-core-js-java lightdm-remote-session-freerdp2 mariadb-client metasploit-framework netcat-traditional netdiscover nfs-common nikto nmap openvpn powershell-empire python3-pip python3-scapy python3-shodan seclists smbclient smbmap smtp-user-enum sqlite3 sqlmap sslscan sublist3r traceroute webext-foxyproxy wireshark wordlists wpscan wpscan zaproxy zsh
   
   
 ### Installation des modules Python de base
@@ -301,15 +301,19 @@ Nessus télécharge alors tous les fichiers nécessaires (plugins)
   
     
 ## DNAT depuis Windows
+
 On peut si besoin, configurer une règle de DNAT sur Windows pour accéder directement à la VM Kali depuis le reste du réseau
+
 `PS C:\> netsh interface portproxy add v4tov4 listenport=4444 listenaddress=0.0.0.0 connectport=4444 connectaddress=<IP KALI>`
 
 On créé ensuite l'autorisation firewall associée
+
 `PS C:\> netsh advfirewall firewall add rule name="WSL2 4444" dir=in action=allow protocol=tcp localip=any remoteip=any localport=4444`
 
 Ok.
 
 Si besoin de désactiver le firewall
+
 `PS C:\> netsh advfirewall set allprofiles state off`
 
     Ok.
@@ -317,5 +321,6 @@ Si besoin de désactiver le firewall
 Ou 
 
 `PS C:\> Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False`
-
+  
+  
 # FIN
