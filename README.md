@@ -10,7 +10,7 @@ Redémarrer le PC pour installer les composants
 
 Se rendre sur le site de microsoft pour Télécharger le package de mise à jour en WSL2
 Étapes d’installation manuelle pour les versions antérieures de WSL | Microsoft Docs
-[WSL2 UPDATE](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+[WSL2 UPDATE](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi "WSL2 Update")
 
 ###Activation Hyper-V
 C:\>**bcdedit /set hypervisorlaunchtype auto**
@@ -45,7 +45,7 @@ Ubuntu-20.04    Ubuntu 20.04 LTS
 ##Installation de Kali Linux
 
 ###Lancement de l'installation
-C:\>**wsl --install -d kali-linux**
+`C:\>**wsl --install -d kali-linux**`
 Kali Linux Rolling est déjà installé.
 Lancement de Kali Linux Rolling...
 
@@ -148,22 +148,22 @@ cd impacket/
 pip3 install -r requirements.txt
 python3 ./setup.py install
 
-# Installation de evil-winrm
+### Installation de evil-winrm
 gem install evil-winrm winrm-fs stringio
 
-# Installation de pywsus
+### Installation de pywsus
 git clone https://github.com/GoSecure/pywsus
 virtualenv -p /usr/bin/python3 ./venv
 source ./venv/bin/activate
 pip install -r ./requirements.txt
 
 
-# Téléchargement de procdump
+### Téléchargement de procdump
 wget https://live.sysinternals.com/procdump.exe
 wget https://live.sysinternals.com/procdump64.exe
 
 
-# Téléchargement de wordlists
+### Téléchargement de wordlists
 wget https://raw.githubusercontent.com/berzerk0/Probable-Wordlists/master/Dictionary-Style/Technical_and_Default/Password_Default_ProbWL.txt
 wget https://raw.githubusercontent.com/berzerk0/Probable-Wordlists/master/Dictionary-Style/Technical_and_Default/Username_Default_ProbWL.txt
 apt install wordlists
@@ -173,90 +173,90 @@ sudo wget https://gist.githubusercontent.com/TylerRockwell/1f24a4b237627811b449d
 sudo wget https://gist.githubusercontent.com/TylerRockwell/e66bb76374aba34ed430dab2617e9d4a/raw/9733e873326835ed91fe63cc269d69b0cb559160/1000_common_passwords
 sudo wget https://gist.githubusercontent.com/TylerRockwell/ab97b16045c3993edf528f8012b8fffa/raw/8c28863bc8361c14903ba11b99122473ed05ec0a/10000_common_passwords
 
-# Récupération de Rubeus
+### Récupération de Rubeus
 mkdir /opt/windows
 cd /opt/windows
 wget https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/Rubeus.exe
 
-# Récupération de WinPeas
+### Récupération de WinPeas
 cd /opt/windows
 wget https://github.com/carlospolop/PEASS-ng/raw/master/winPEAS/winPEASexe/binaries/x86/Release/winPEASx86.exe
 wget https://github.com/carlospolop/PEASS-ng/raw/master/winPEAS/winPEASexe/binaries/x64/Release/winPEASx64.exe
 
-# Téléchargement de psexec
+### Téléchargement de psexec
 cd /opt/windows
 wget https://download.sysinternals.com/files/PSTools.zip
 wget https://live.sysinternals.com/PsExec.exe
 wget https://live.sysinternals.com/PsExec64.exe
 
-# Téléchargement de Mimikatz
+### Téléchargement de Mimikatz
 cd /opt/windows
 wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20210810-2/mimikatz_trunk.zip
 unzip mimikatz_trunk.zip -d mimikatz
 
-# Téléchargement de Powerview
+### Téléchargement de Powerview
 cd /opt/windows
 wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1
 
-# Récupération de LinPeas
+### Récupération de LinPeas
 mkdir /opt/linux
 cd /opt/linux
 wget https://raw.githubusercontent.com/carlospolop/PEASS-ng/master/linPEAS/linpeas.sh
 
-# Récupération de PowerUp
+### Récupération de PowerUp
 cd /opt/windows
 wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Privesc/PowerUp.ps1
 
-# Réccupération du repo de scripts Powershell Nishang
+### Réccupération du repo de scripts Powershell Nishang
 cd /opt
 git clone https://github.com/samratashok/nishang.git
 
-# Installation de CMSMap
+### Installation de CMSMap
 mkdir /opt/web
 cd /opt/web
 git clone https://github.com/Dionach/CMSmap
 cd CMSmap
 pip3 install .
 
-# Récupération de JoomBlah
+### Récupération de JoomBlah
 cd /opt/web
 wget https://raw.githubusercontent.com/XiphosResearch/exploits/master/Joomblah/joomblah.py
 
-# Récupération du PrintSpoofer (élévation de privilèges) et CVE-2017-0213_x64
+### Récupération du PrintSpoofer (élévation de privilèges) et CVE-2017-0213_x64
 mkdir /opt/windows/privesc
 cd /opt/windows/privesc/
 wget https://github.com/dievus/printspoofer/raw/master/PrintSpoofer.exe
 wget https://github.com/SecWiki/windows-kernel-exploits/raw/master/CVE-2017-0213/CVE-2017-0213_x64.zip
 
-# Récupération de Kerbrute
+### Récupération de Kerbrute
 cd /opt/windows
 wget https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64
 
-# Récupération du script Kerberoast
+### Récupération du script Kerberoast
 cd /opt/windows
 wget https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/credentials/Invoke-Kerberoast.ps1
 
-# Installation de Weevely
+### Installation de Weevely
 cd /opt/web
 git clone https://github.com/epinna/weevely3.git
 cd weevely3/
 pip3 install -r requirements.txt --upgrade
 
 
-# Installation de NMAP Automator
+### Installation de NMAP Automator
 mkdir /opt/recon
 cd /opt/recon
 wget https://raw.githubusercontent.com/21y4d/nmapAutomator/master/nmapAutomator.sh
 chmod u+x ./nmapAutomator.sh
 
-# SQLi Dictionary
+### SQLi Dictionary
 wget https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/master/attack/sql-injection/detect/xplatform.txt
 
-# Burp Suite Jython
+### Burp Suite Jython
 cd /opt/web
 wget https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.2/jython-standalone-2.7.2.jar
 
-# Installation de Nessus
+### Installation de Nessus
 Enregistrement sur le site : https://www.tenable.com/products/nessus/nessus-essentials
 Téléchargement du package pour Kali : Nessus-10.0.2-debian6_amd64.deb 
 Création d'un répertoire de travail : mkdir /opt/nessus && cd /opt/nessus
@@ -291,57 +291,19 @@ Nessus télécharge alors tous les fichiers nécessaires (plugins)
 
 
 
-DNAT depuis Windows
-# On peut si besoin, configurer une règle de DNAT sur Windows pour accéder directement à la VM Kali depuis le reste du réseau
+##DNAT depuis Windows
+On peut si besoin, configurer une règle de DNAT sur Windows pour accéder directement à la VM Kali depuis le reste du réseau
 PS C:\> netsh interface portproxy add v4tov4 listenport=4444 listenaddress=0.0.0.0 connectport=4444 connectaddress=<IP KALI>
 
-# On créé ensuite l'autorisation firewall associée
+On créé ensuite l'autorisation firewall associée
 PS C:\> netsh advfirewall firewall add rule name="WSL2 4444" dir=in action=allow protocol=tcp localip=any remoteip=any localport=4444
 Ok.
 
-# Si besoin de désactiver le firewall
+Si besoin de désactiver le firewall
 PS C:\> netsh advfirewall set allprofiles state off
 Ok.
 Ou 
 PS C:\> Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
 
 Script pour automatiser l'action avec le changement d'IP à chaque démarrage
-[WSL 2] NIC Bridge mode 🖧 (Has TCP Workaround🔨) · Issue #4150 · microsoft/WSL · GitHub
-
-
-$remoteport = bash.exe -c "ifconfig eth0 | grep 'inet '"
-$found = $remoteport -match '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}';
-
-if( $found ){
-  $remoteport = $matches[0];
-} else{
-  echo "The Script Exited, the ip address of WSL 2 cannot be found";
-  exit;
-}
-
-#[Ports]
-
-#All the ports you want to forward separated by coma
-# $ports=@(80,443,10000,3000,5000);
-$ports=@(4444);
-
-
-#[Static ip]
-#You can change the addr to your ip config to listen to a specific address
-$addr='0.0.0.0';
-$ports_a = $ports -join ",";
-
-
-#Remove Firewall Exception Rules
-iex "Remove-NetFireWallRule -DisplayName 'WSL 2 Firewall Unlock' ";
-
-#adding Exception Rules for inbound and outbound Rules
-iex "New-NetFireWallRule -DisplayName 'WSL 2 Firewall Unlock' -Direction Outbound -LocalPort $ports_a -Action Allow -Protocol TCP";
-iex "New-NetFireWallRule -DisplayName 'WSL 2 Firewall Unlock' -Direction Inbound -LocalPort $ports_a -Action Allow -Protocol TCP";
-
-for( $i = 0; $i -lt $ports.length; $i++ ){
-  $port = $ports[$i];
-  iex "netsh interface portproxy delete v4tov4 listenport=$port listenaddress=$addr";
-  iex "netsh interface portproxy add v4tov4 listenport=$port listenaddress=$addr connectport=$port connectaddress=$remoteport";
-}
 
