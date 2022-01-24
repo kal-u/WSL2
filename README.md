@@ -3,12 +3,13 @@
 ## Prérequis
 
 Etre en version de Windows 10 Pro 1903 (Mars 2019) minimum
-Démarrer / Exécuter : appwiz.cpl
-Activer ou désactiver des fonctionnalités de Windows
-Cocher "Plateforme d'ordinateur virtuel" et "Sous-système Windows pour Linux"
-Redémarrer le PC pour installer les composants
+Démarrer / Exécuter : `appwiz.cpl`
 
-Se rendre sur le site de microsoft pour Télécharger le package de mise à jour en WSL2
+Activer ou désactiver des fonctionnalités de Windows
+- Cocher "Plateforme d'ordinateur virtuel" et "Sous-système Windows pour Linux"
+- Redémarrer le PC pour installer les composants
+
+Ensuite, se rendre sur le site de microsoft pour Télécharger le package de mise à jour en WSL2
 Étapes d’installation manuelle pour les versions antérieures de WSL | Microsoft Docs
 [WSL2 UPDATE](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi "WSL2 Update")
 
