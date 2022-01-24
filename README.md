@@ -14,7 +14,8 @@ Se rendre sur le site de microsoft pour Télécharger le package de mise à jour
 
 
 ### Activation Hyper-V
-`C:\>**bcdedit /set hypervisorlaunchtype auto**`
+`C:\>bcdedit /set hypervisorlaunchtype auto`
+
 L’opération a réussi.
 
 
@@ -23,12 +24,13 @@ L’opération a réussi.
 Ouvrir ensuite un CMD en tant qu'administrateur
 
 ### Définir la version 2 par défaut pour les nouvelles machines
-`C:\>**wsl --set-default-version 2**`
+`C:\>wsl --set-default-version 2`
+
 Pour plus d’informations sur les différences de clés avec WSL 2, visitez https://aka.ms/wsl2
 L’opération a réussi.
 
 ### Lister les images disponibles
-`C:\>**wsl --list --online**`
+`C:\>wsl --list --online`
 Voici la liste des distributions valides qui peuvent être installées.
 Installer à l’aide de « wsl --install -d <Distribution> ».
 
@@ -46,7 +48,7 @@ Ubuntu-20.04    Ubuntu 20.04 LTS
 ## Installation de Kali Linux
 
 ### Lancement de l'installation
-`C:\>**wsl --install -d kali-linux**`
+`C:\>wsl --install -d kali-linux`
 Kali Linux Rolling est déjà installé.
 Lancement de Kali Linux Rolling...
 
@@ -62,8 +64,8 @@ passwd: password updated successfully
 Installation successful!
 
 ### Vérifier qu'on est bien en WSL2
-kali@HOST:~$ **uname -a**
-Linux HOST 5.10.16.3-microsoft-standard-WSL2 #1 SMP Fri Apr 2 22:23:49 UTC 2021 x86_64 GNU/Linux
+`kali@HOST:~$ uname -a
+Linux HOST 5.10.16.3-microsoft-standard-WSL2 #1 SMP Fri Apr 2 22:23:49 UTC 2021 x86_64 GNU/Linux`
 
 ### Dans le CMD, vérifier qu'on est bien en WSL2
 C:\>**wsl --list -v**
