@@ -34,17 +34,17 @@ L’opération a réussi.*
 
 Voici la liste des distributions valides qui peuvent être installées.
 
-`Installer à l’aide de « wsl --install -d <Distribution> ».<br />
-<br />
-NAME            FRIENDLY NAME<br />
-Ubuntu          Ubuntu<br />
-Debian          Debian GU/Linux<br />
-kali-linux      Kali Linux Rolling<br />
-openSUSE-42     openSUSE Leap 42<br />
-SLES-12         SUSE Linux Enterprise Server v12<br />
-Ubuntu-16.04    Ubuntu 16.04 LTS<br />
-Ubuntu-18.04    Ubuntu 18.04 LTS<br />
-Ubuntu-20.04    Ubuntu 20.04 LTS`
+``Installer à l’aide de « wsl --install -d <Distribution> ».
+
+NAME            FRIENDLY NAME
+Ubuntu          Ubuntu
+Debian          Debian GU/Linux
+kali-linux      Kali Linux Rolling
+openSUSE-42     openSUSE Leap 42
+SLES-12         SUSE Linux Enterprise Server v12
+Ubuntu-16.04    Ubuntu 16.04 LTS
+Ubuntu-18.04    Ubuntu 18.04 LTS
+Ubuntu-20.04    Ubuntu 20.04 LTS``
 
 
 ## Installation de Kali Linux  
