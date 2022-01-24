@@ -12,17 +12,15 @@ Activer ou désactiver des fonctionnalités de Windows
 Ensuite, se rendre sur le site de microsoft pour Télécharger le package de mise à jour en WSL2
 
 Étapes d’installation manuelle pour les versions antérieures de WSL | Microsoft Docs
-[WSL2 UPDATE](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi "WSL2 Update")
-
+[WSL2 UPDATE](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi "WSL2 Update")  
 
 
 ### Activation Hyper-V
-`C:\>bcdedit /set hypervisorlaunchtype auto`
+`C:\>bcdedit /set hypervisorlaunchtype auto`  
 
-L’opération a réussi.
-
-
-
+L’opération a réussi.  
+  
+  
 ## Configuration WSL2
 
 Ouvrir ensuite un CMD en tant qu'administrateur
@@ -35,7 +33,7 @@ Pour plus d’informations sur les différences de clés avec WSL 2, visitez ht
 L’opération a réussi.
 
 ### Lister les images disponibles
-`C:\>wsl --list --online
+`C:\>wsl --list --online`
 
 Voici la liste des distributions valides qui peuvent être installées.
 
@@ -60,18 +58,18 @@ Ubuntu-20.04    Ubuntu 20.04 LTS`
 Lancement de Kali Linux Rolling...
 
 
-### Une fois lancé, renseigner le nom d'utilisateur et le mot de passe souhaité
+### Une fois lancé, renseigner le nom d'utilisateur et le mot de passe souhaité  
 
-`Installing, this may take a few minutes...
+Installing, this may take a few minutes...
 Please create a default UNIX user account. The username does not need to match your Windows username.
 For more information visit: https://aka.ms/wslusers
 Enter new UNIX username: **kali**
 New password:
 Retype new password:
 passwd: password updated successfully
-Installation successful!`
-
-
+Installation successful!  
+  
+  
 ### Vérifier qu'on est bien en WSL2
 `kali@HOST:~$ uname -a
 Linux HOST 5.10.16.3-microsoft-standard-WSL2 #1 SMP Fri Apr 2 22:23:49 UTC 2021 x86_64 GNU/Linux`
