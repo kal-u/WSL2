@@ -12,22 +12,23 @@ Se rendre sur le site de microsoft pour Télécharger le package de mise à jour
 Étapes d’installation manuelle pour les versions antérieures de WSL | Microsoft Docs
 [WSL2 UPDATE](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi "WSL2 Update")
 
-###Activation Hyper-V
-C:\>**bcdedit /set hypervisorlaunchtype auto**
+
+### Activation Hyper-V
+`C:\>**bcdedit /set hypervisorlaunchtype auto**`
 L’opération a réussi.
 
 
-##Configuration WSL2
+## Configuration WSL2
 
 Ouvrir ensuite un CMD en tant qu'administrateur
 
-###Définir la version 2 par défaut pour les nouvelles machines
-C:\>**wsl --set-default-version 2**
+### Définir la version 2 par défaut pour les nouvelles machines
+`C:\>**wsl --set-default-version 2**`
 Pour plus d’informations sur les différences de clés avec WSL 2, visitez https://aka.ms/wsl2
 L’opération a réussi.
 
-###Lister les images disponibles
-C:\>**wsl --list --online**
+### Lister les images disponibles
+`C:\>**wsl --list --online**`
 Voici la liste des distributions valides qui peuvent être installées.
 Installer à l’aide de « wsl --install -d <Distribution> ».
 
@@ -42,15 +43,15 @@ Ubuntu-18.04    Ubuntu 18.04 LTS
 Ubuntu-20.04    Ubuntu 20.04 LTS
 
 
-##Installation de Kali Linux
+## Installation de Kali Linux
 
-###Lancement de l'installation
+### Lancement de l'installation
 `C:\>**wsl --install -d kali-linux**`
 Kali Linux Rolling est déjà installé.
 Lancement de Kali Linux Rolling...
 
 
-###Une fois lancé, renseigner le nom d'utilisateur et le mot de passe souhaité
+### Une fois lancé, renseigner le nom d'utilisateur et le mot de passe souhaité
 Installing, this may take a few minutes...
 Please create a default UNIX user account. The username does not need to match your Windows username.
 For more information visit: https://aka.ms/wslusers
@@ -60,21 +61,21 @@ Retype new password:
 passwd: password updated successfully
 Installation successful!
 
-###Vérifier qu'on est bien en WSL2
+### Vérifier qu'on est bien en WSL2
 kali@HOST:~$ **uname -a**
 Linux HOST 5.10.16.3-microsoft-standard-WSL2 #1 SMP Fri Apr 2 22:23:49 UTC 2021 x86_64 GNU/Linux
 
-###Dans le CMD, vérifier qu'on est bien en WSL2
+### Dans le CMD, vérifier qu'on est bien en WSL2
 C:\>**wsl --list -v**
   NAME          STATE           VERSION
 * kali-linux    Running         2
 
-###Afin de faire fonctionner les mises à jour correctement, j'ai du effectuer les actions suivantes :
+### Afin de faire fonctionner les mises à jour correctement, j'ai du effectuer les actions suivantes :
 root@HOST:/tmp# **wget --no-check-certificate https://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2020.2_all.deb**
 root@HOST:/tmp# **dpkg -i kali-archive-keyring_2020.2_all.deb**
 root@HOST:~# **apt update**
 
-###S'il y a une erreur par rapport à libcrypt, procéder comme suit :
+### S'il y a une erreur par rapport à libcrypt, procéder comme suit :
 root@HOST:~# **cd /tmp**
 root@HOST:~# **chmod 1777 /tmp**
 root@HOST:~# **apt -y download libcrypt1**
@@ -83,7 +84,7 @@ root@HOST:~# **cp -av lib/x86_64-linux-gnu/* /lib/x86_64-linux-gnu/**
 root@HOST:~# **apt -y --fix-broken install**
 
 
-##Accès en graphique
+## Accès en graphique
 
 2 solutions simples s'offrent à nous
 
@@ -97,11 +98,11 @@ Il ne reste plus qu'à se connecter en terminal server sur notre Kali.
 
 Autre option :
 
-###Installation d'un serveur X
+### Installation d'un serveur X
 
 Téléchargement de VcXsrv Windows X Server - [VCXSRV](https://sourceforge.net/projects/vcxsrv)
 
-####Installer le serveur X
+#### Installer le serveur X
 Lancer ensuite XLaunch
 
 Choisir "Multiple Windows" puis "Start no client"
@@ -109,39 +110,39 @@ Ensuite, bien cocher "Disable access control"
 Suivant, puis Terminer
 
 
-##Paramétrage Kali
+## Paramétrage Kali
 
 Si on a choisi l'option Serveur X
 
-###On export notre variable display vers le serveur X de notre machine windows et on test en lançant Firefox
+### On export notre variable display vers le serveur X de notre machine windows et on test en lançant Firefox
 root@HOST:/# **vi ~/.bashrc**
 
 Ajouter les 2 lignes suivantes à la fin du fichier
 **export DISPLAY="$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0"**
 **export LIBGL_ALWAYS_INDIRECT=1**
 
-###Ajout d'un alias pour afficher son adresse IP
+### Ajout d'un alias pour afficher son adresse IP
 alias my="ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
 
-###Appliquer les modifications
+### Appliquer les modifications
 root@HOST:/# **source ~/.bashrc**
 
 
 
-##Installation des packages pour passer d'une Kali de base à une CTF War Machine !
+## Installation des packages pour passer d'une Kali de base à une CTF War Machine !
 root@HOST:/# **apt-get install -y binwalk bloodhound burpsuite crackmapexec default-mysql-client dirb dirbuster dnsrecon enum4linux exploitdb exploitdb ffuf firefox-esr ftp-ssl gedit git gobuster hashcat hydra john joomscan libjenkins-htmlunit-core-js-java lightdm-remote-session-freerdp2 mariadb-client metasploit-framework netcat-traditional netdiscover nfs-common nikto nmap openvpn powershell-empire python3-pip python3-scapy python3-shodan seclists smbclient smbmap smtp-user-enum sqlite3 sqlmap sslscan sublist3r traceroute webext-foxyproxy wireshark wordlists wpscan wpscan zaproxy zsh **
 
-###Installation des modules Python de base
+### Installation des modules Python de base
 root@HOST:/# pip3 install keyboard pyfiglet paramiko git-dumper
 
-###Création d'une arborescence dédiée
+### Création d'une arborescence dédiée
 sudo mkdir -p /opt/recon
 sudo mkdir -p /opt/linux
 sudo mkdir -p /opt/web
 sudo mkdir -p /opt/windows
 sudo mkdir -p /opt/impacket
 
-###Installation de la suite Impacket
+### Installation de la suite Impacket
 cd /opt
 git clone https://github.com/SecureAuthCorp/impacket.git
 cd impacket/
@@ -291,7 +292,7 @@ Nessus télécharge alors tous les fichiers nécessaires (plugins)
 
 
 
-##DNAT depuis Windows
+## DNAT depuis Windows
 On peut si besoin, configurer une règle de DNAT sur Windows pour accéder directement à la VM Kali depuis le reste du réseau
 PS C:\> netsh interface portproxy add v4tov4 listenport=4444 listenaddress=0.0.0.0 connectport=4444 connectaddress=<IP KALI>
 
