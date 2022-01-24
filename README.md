@@ -1,6 +1,6 @@
-#Installer WSL2 sur Windows 10
+# Installer WSL2 sur Windows 10
 
-##Prérequis
+## Prérequis
 
 Etre en version de Windows 10 Pro 1903 (Mars 2019) minimum
 Démarrer / Exécuter : appwiz.cpl
