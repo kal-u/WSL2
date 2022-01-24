@@ -1,4 +1,4 @@
-# Installer WSL2 sur Windows 10  
+# Installer Kali en WSL2 sur Windows 10  
 
 ## Prérequis  
 
