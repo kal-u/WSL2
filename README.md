@@ -39,7 +39,7 @@ Voici la liste des distributions valides qui peuvent être installées.
     NAME            FRIENDLY NAME
     Ubuntu          Ubuntu
     Debian          Debian GU/Linux
-    kali-linux      Kali Linux Rolling
+    **kali-linux**      Kali Linux Rolling
     openSUSE-42     openSUSE Leap 42
     SLES-12         SUSE Linux Enterprise Server v12
     Ubuntu-16.04    Ubuntu 16.04 LTS
