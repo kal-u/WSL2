@@ -10,6 +10,7 @@ Activer ou désactiver des fonctionnalités de Windows
 - Redémarrer le PC pour installer les composants
 
 Ensuite, se rendre sur le site de microsoft pour Télécharger le package de mise à jour en WSL2
+
 Étapes d’installation manuelle pour les versions antérieures de WSL | Microsoft Docs
 [WSL2 UPDATE](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi "WSL2 Update")
 
