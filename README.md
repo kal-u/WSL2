@@ -15,10 +15,12 @@ Ensuite, se rendre sur le site de microsoft pour Télécharger le package de mis
 [WSL2 UPDATE](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi "WSL2 Update")
 
 
+
 ### Activation Hyper-V
 `C:\>bcdedit /set hypervisorlaunchtype auto`
 
 L’opération a réussi.
+
 
 
 ## Configuration WSL2
@@ -28,42 +30,47 @@ Ouvrir ensuite un CMD en tant qu'administrateur
 ### Définir la version 2 par défaut pour les nouvelles machines
 `C:\>wsl --set-default-version 2`
 
+
 Pour plus d’informations sur les différences de clés avec WSL 2, visitez https://aka.ms/wsl2
 L’opération a réussi.
 
 ### Lister les images disponibles
-`C:\>wsl --list --online`
+`C:\>wsl --list --online
+
 Voici la liste des distributions valides qui peuvent être installées.
+
 Installer à l’aide de « wsl --install -d <Distribution> ».
 
 NAME            FRIENDLY NAME
 Ubuntu          Ubuntu
 Debian          Debian GNU/Linux
-**kali-linux      Kali Linux Rolling**
+kali-linux      Kali Linux Rolling
 openSUSE-42     openSUSE Leap 42
 SLES-12         SUSE Linux Enterprise Server v12
 Ubuntu-16.04    Ubuntu 16.04 LTS
 Ubuntu-18.04    Ubuntu 18.04 LTS
-Ubuntu-20.04    Ubuntu 20.04 LTS
+Ubuntu-20.04    Ubuntu 20.04 LTS`
 
 
 ## Installation de Kali Linux
 
 ### Lancement de l'installation
 `C:\>wsl --install -d kali-linux`
-Kali Linux Rolling est déjà installé.
+
 Lancement de Kali Linux Rolling...
 
 
 ### Une fois lancé, renseigner le nom d'utilisateur et le mot de passe souhaité
-Installing, this may take a few minutes...
+
+`Installing, this may take a few minutes...
 Please create a default UNIX user account. The username does not need to match your Windows username.
 For more information visit: https://aka.ms/wslusers
 Enter new UNIX username: **kali**
 New password:
 Retype new password:
 passwd: password updated successfully
-Installation successful!
+Installation successful!`
+
 
 ### Vérifier qu'on est bien en WSL2
 `kali@HOST:~$ uname -a
