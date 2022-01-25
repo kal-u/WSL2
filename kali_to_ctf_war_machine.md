@@ -127,9 +127,9 @@ Lancer ensuite XLaunch
 
 Si vous avez choisi (comme moi) l'option Serveur X
 
-### On exporte notre variable display vers le serveur X de notre machine windows et on test en lançant Firefox
+### On exporte notre variable display vers le serveur X de notre machine windows
     
-`# vi ~/.bashrc`
+`vi ~/.bashrc`
 
 Ajouter les 2 lignes suivantes à la fin du fichier
 
@@ -141,7 +141,7 @@ Ajouter les 2 lignes suivantes à la fin du fichier
     alias my="ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
 
 ### Appliquer les modifications
-`# source ~/.bashrc`
+`source ~/.bashrc`
 
 
 
@@ -227,7 +227,7 @@ Ajouter les 2 lignes suivantes à la fin du fichier
     wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Privesc/PowerUp.ps1
 
 ### Réccupération du repo de scripts Powershell Nishang
-    cd /opt
+    cd /opt/windows
     git clone https://github.com/samratashok/nishang.git
 
 ### Installation de CMSMap
