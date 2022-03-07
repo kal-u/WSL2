@@ -4,12 +4,20 @@
 
 Etre en version de Windows 10 Pro 1903 (Mars 2019) minimum
 
-Démarrer / Exécuter : `appwiz.cpl`  
+Mettre à jour son système avec les dernières mises à jour
 
-Activer ou désactiver des fonctionnalités de Windows  
-- Cocher "Plateforme d'ordinateur virtuel" et "Sous-système Windows pour Linux"
-- Redémarrer le PC pour installer les composants
-  
+Activer la virtualisation dans son BIOS
+
+Puis activer les fonctionnalités Windows
+
+  Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+  dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+  dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+
+Redémarrer votre ordinateur
+
+
 Ensuite, se rendre sur le site de microsoft pour Télécharger le package de mise à jour en WSL2  
   
 Étapes d’installation manuelle pour les versions antérieures de WSL | Microsoft Docs  
@@ -54,6 +62,8 @@ Voici la liste des distributions valides qui peuvent être installées.
 `C:\>wsl --install -d kali-linux`  
   
 *Lancement de Kali Linux Rolling...*  
+
+Une autre option, qui permet d'installer directement la dernière version de Kali Linux, consiste à passer par le Windows Store
 
 
 ### Une fois lancé, renseigner le nom d'utilisateur et le mot de passe souhaité  
@@ -145,9 +155,15 @@ Ajouter les 2 lignes suivantes à la fin du fichier
 
 
 
-## Installation des packages pour passer d'une Kali de base à une CTF War Machine !
-    apt-get install -y binwalk bloodhound burpsuite crackmapexec default-mysql-client dirb dirbuster dnsrecon enum4linux exploitdb exploitdb ffuf firefox-esr ftp-ssl gedit git gobuster hashcat hydra john joomscan libjenkins-htmlunit-core-js-java lightdm-remote-session-freerdp2 mariadb-client metasploit-framework netcat-traditional netdiscover nfs-common nikto nmap openvpn powershell-empire python3-pip python3-scapy python3-shodan seclists smbclient smbmap smtp-user-enum sqlite3 sqlmap sslscan sublist3r traceroute webext-foxyproxy wireshark wordlists wpscan wpscan zaproxy zsh
-  
+## Installation des packages pour passer (selon moi) d'une Kali de base à une CTF War Machine !
+    apt-get install -y binwalk bloodhound burpsuite crackmapexec default-mysql-client dirb dirbuster dnsrecon enum4linux exiftool exploitdb exploitdb ffuf firefox-esr ftp-ssl gcc-mingw-w64-x86-64 gedit git gobuster hashcat hashid hexer hydra john joomscan libjenkins-htmlunit-core-js-java lightdm-remote-session-freerdp2 mariadb-client metasploit-framework netcat-traditional netdiscover nfs-common nikto nmap openvpn powershell-empire python3-pip python3-scapy python3-shodan rar seclists smbclient smbmap smtp-user-enum sqlite3 sqlmap sslscan starkiller steghide sublist3r tmux traceroute unrar webext-foxyproxy webshells wireshark wordlists wpscan wpscan zaproxy zbar-tools zsh
+
+## Une autre option, consiste à installer les méta packages Kali en fonction de votre besoin
+[KALI-META](https://www.kali.org/tools/kali-meta/ "Kali Meta")
+Exemple pour installer tous les outils Kali
+
+    sudo apt install kali-linux-everything
+
   
 ### Installation des modules Python de base
 `# pip3 install keyboard pyfiglet paramiko git-dumper`
@@ -271,6 +287,72 @@ Ajouter les 2 lignes suivantes à la fin du fichier
 ### Burp Suite Jython
     cd /opt/web
     wget https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.2/jython-standalone-2.7.2.jar
+
+### Récupération de socat pour windows
+    cd /opt/windows
+    wget https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/socat?raw=true
+
+### Récupération de Windows Exploitation Suggester
+    cd /opt/windows/privesc
+    wget https://raw.githubusercontent.com/AonCyberLabs/Windows-Exploit-Suggester/master/windows-exploit-suggester.py
+
+### Récupération de LinEnum.sh
+    cd /opt/linux/privesc
+    wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
+
+### Récupération d'un exploit Mysql
+    wget https://www.exploit-db.com/download/1518 -O raptor_udf2.c
+
+### Récupération de Stegseek
+    wget https://github.com/RickdeJager/stegseek/releases/download/v0.6/stegseek_0.6-1.deb
+    sudo apt install ./stegseek_0.5-1.deb
+
+### Installation de Network Miner
+    mkdir /opt/network/
+    sudo apt install mono-devel
+    wget https://www.netresec.com/?download=NetworkMiner -O /tmp/nm.zip
+    sudo unzip /tmp/nm.zip -d /opt/
+    cd /opt/NetworkMiner*
+    sudo chmod +x NetworkMiner.exe
+    sudo chmod -R go+w AssembledFiles/
+    sudo chmod -R go+w Captures/
+
+    Pour lancer Network Miner =>
+    mono NetworkMiner.exe --noupdatecheck
+
+### Installation de pyenv
+    sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+    cd ~/.pyenv && src/configure && make -C src
+
+    sed -Ei -e '/^([^#]|$)/ {a \
+    export PYENV_ROOT="$HOME/.pyenv"
+    a \
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    a \
+    ' -e ':a' -e '$!{n;ba};}' ~/.profile
+    echo 'eval "$(pyenv init --path)"' >>~/.profile
+
+    echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+
+    pyenv install 2.7.18
+    pyenv install 3.9.9
+    pyenv global 2.7.18
+    pip install --upgrade pip
+    pip install httplib2
+    pyenv versions
+
+### Téléchargement de Linux Exploit Suggester v2
+    cd /opt/linux/privesc
+    wget https://raw.githubusercontent.com/jondonas/linux-exploit-suggester-2/master/linux-exploit-suggester-2.pl
+
+### Téléchargement de Linux Smart Enumeration
+    cd /opt/linux/privesc
+    wget https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/master/lse.sh
+    ![image](https://user-images.githubusercontent.com/98317704/157004111-fed9e00c-6832-4d48-918d-82142712f8c2.png)
+
+
+
 
 ### Installation de Nessus
     Enregistrement sur le site : https://www.tenable.com/products/nessus/nessus-essentials
