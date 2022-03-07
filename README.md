@@ -6,16 +6,16 @@ Etre en version de Windows 10 Pro 1903 (Mars 2019) minimum
 
 Mettre à jour son système avec les dernières mises à jour
 
-Activer la virtualisation dans son BIOS
+Activer la virtualisation dans votre BIOS
 
 Puis activer les fonctionnalités Windows
 
-  Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-  dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-  dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 
 
-Redémarrer votre ordinateur
+**Redémarrer votre ordinateur**
 
 
 Ensuite, se rendre sur le site de microsoft pour Télécharger le package de mise à jour en WSL2  
@@ -114,12 +114,37 @@ Une autre option, qui permet d'installer directement la dernière version de Kal
 
 ### Installation d'un serveur TSE dans WSL2
 
-    sudo apt install xfce4
-    sudo apt install xrdp
+    sudo apt install -y xfce4
+    sudo apt install -y xrdp
+    
+ Modification des fichiers de configuration pour changer le port par défaut
+ 
+    sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+    sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
+    sudo sed -i 's/max_bpp=32/#max_bpp=32\nmax_bpp=128/g' /etc/xrdp/xrdp.ini
+    sudo sed -i 's/xserverbpp=24/#xserverbpp=24\nxserverbpp=128/g' /etc/xrdp/xrdp.ini
+    echo xfce4-session > ~/.xsession
+
+    sudo nano /etc/xrdp/startwm.sh
+ 
+ Commenter les lignes ci-dessous :
+ 
+    #test -x /etc/X11/Xsession && exec /etc/X11/Xsession
+    #exec /bin/sh /etc/X11/Xsession
+
+ Ajout les lignes ci-dessous :
+ 
+    # xfce
+    startxfce4
+    
+Démarrer le service XRDP
+    
     sudo /etc/init.d/xrdp start
 
-Il ne reste plus qu'à se connecter en terminal server sur notre Kali.
+Il ne reste plus qu'à se connecter en terminal server depuis votre windows sur notre Kali.
       
+    mstsc /v:localhost:3390
+    
       
 Autre option :
     
