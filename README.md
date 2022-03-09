@@ -319,6 +319,7 @@ Exemple pour installer tous les outils Kali
 ### Récupération de socat pour windows
     cd /opt/windows
     wget https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/socat?raw=true
+    mv 'socat?raw=true' socat.exe
 
 ### Récupération de Windows Exploitation Suggester
     cd /opt/windows/privesc
