@@ -197,11 +197,12 @@ Exemple pour installer tous les outils Kali
   
 ### Création d'une arborescence dédiée
 
-    sudo mkdir -p /opt/recon
-    sudo mkdir -p /opt/linux/privesc
-    sudo mkdir -p /opt/windows/privesc
-    sudo mkdir -p /opt/impacket
-    sudo mkdir -p /opt/web
+    sudo chown kali:kali /opt
+    mkdir -p /opt/recon
+    mkdir -p /opt/linux/privesc
+    mkdir -p /opt/windows/privesc
+    mkdir -p /opt/impacket
+    mkdir -p /opt/web
 
 ### Installation de la suite Impacket
     cd /opt
