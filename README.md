@@ -212,7 +212,7 @@ Exemple pour installer tous les outils Kali
 
 ### Installation de evil-winrm
     cd /opt
-    gem install evil-winrm winrm-fs stringio
+    sudo gem install evil-winrm winrm-fs stringio
 
 ### Installation de pywsus
     cd /opt
