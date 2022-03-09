@@ -201,7 +201,9 @@ Exemple pour installer tous les outils Kali
     mkdir -p /opt/linux/privesc
     mkdir -p /opt/windows/privesc
     mkdir -p /opt/impacket
+    mkdir -p /opt/network
     mkdir -p /opt/web
+    mkdir -p /opt/stegano
 
 ### Installation de la suite Impacket
     cd /opt
@@ -330,46 +332,46 @@ Exemple pour installer tous les outils Kali
     wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
 
 ### Récupération d'un exploit Mysql
+    cd /opt/linux/privesc
     wget https://www.exploit-db.com/download/1518 -O raptor_udf2.c
 
 ### Récupération de Stegseek
+    cd /opt/stegano
     wget https://github.com/RickdeJager/stegseek/releases/download/v0.6/stegseek_0.6-1.deb
-    sudo apt install ./stegseek_0.5-1.deb
+    sudo apt install -y ./stegseek_0.6-1.deb
 
 ### Installation de Network Miner
-    mkdir /opt/network/
-    sudo apt install mono-devel
+    cd /opt/network
+    sudo apt install -y  mono-devel
     wget https://www.netresec.com/?download=NetworkMiner -O /tmp/nm.zip
-    sudo unzip /tmp/nm.zip -d /opt/
+    unzip /tmp/nm.zip -d /opt/
     cd /opt/NetworkMiner*
-    sudo chmod +x NetworkMiner.exe
-    sudo chmod -R go+w AssembledFiles/
-    sudo chmod -R go+w Captures/
+    chmod +x NetworkMiner.exe
+    chmod -R go+w AssembledFiles/
+    chmod -R go+w Captures/
+    printf '#!/bin/sh\nmono NetworkMiner.exe --noupdatecheck' > launch.sh
+    chmod u+x launch.sh
 
     Pour lancer Network Miner =>
     mono NetworkMiner.exe --noupdatecheck
 
 ### Installation de pyenv
-    sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+    sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
+    git clone https://github.com/pyenv/pyenv.git ~/.pyenv
     cd ~/.pyenv && src/configure && make -C src
 
-    sed -Ei -e '/^([^#]|$)/ {a \
-    export PYENV_ROOT="$HOME/.pyenv"
-    a \
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    a \
-    ' -e ':a' -e '$!{n;ba};}' ~/.profile
-    echo 'eval "$(pyenv init --path)"' >>~/.profile
-
-    echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+    echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+    echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"\nfi' >> ~/.bashrc
+    source ~/.bashrc
     pyenv install 2.7.18
     pyenv install 3.9.9
     pyenv global 2.7.18
     pip install --upgrade pip
     pip install httplib2
     pyenv versions
+    pyenv install --list
 
 ### Téléchargement de Linux Exploit Suggester v2
     cd /opt/linux/privesc
