@@ -219,6 +219,7 @@ Exemple pour installer tous les outils Kali
     git clone https://github.com/GoSecure/pywsus
     virtualenv -p /usr/bin/python3 ./venv
     source ./venv/bin/activate
+    cd /opt/pywsus
     pip install -r ./requirements.txt
 
 
