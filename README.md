@@ -91,8 +91,8 @@ Une autre option, qui permet d'installer directement la dernière version de Kal
 
 ### Afin de faire fonctionner les mises à jour correctement, j'ai du effectuer les actions suivantes :
 
-    wget --no-check-certificate https://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2020.2_all.deb
-    dpkg -i kali-archive-keyring_2020.2_all.deb
+    wget --no-check-certificate https://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2022.1_all.deb
+    dpkg -i kali-archive-keyring_2022.1_all.deb
     apt update
 
 ### S'il y a une erreur par rapport à libcrypt, procéder comme suit :
