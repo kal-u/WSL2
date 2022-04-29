@@ -182,7 +182,7 @@ Ajouter les 2 lignes suivantes à la fin du fichier
 
 
 ## Installation des packages pour passer (selon moi) d'une Kali de base à une CTF War Machine !
-    apt-get install -y binwalk bloodhound burpsuite crackmapexec default-mysql-client dirb dirbuster dnsrecon enum4linux exiftool exploitdb exploitdb ffuf firefox-esr ftp-ssl gcc-mingw-w64-x86-64 gedit git gobuster hashcat hashid hexer hydra john joomscan libjenkins-htmlunit-core-js-java lightdm-remote-session-freerdp2 mariadb-client metasploit-framework netcat-traditional netdiscover nfs-common nikto nmap openvpn powershell-empire python3-pip python3-scapy python3-shodan rar seclists smbclient smbmap smtp-user-enum sqlite3 sqlmap sslscan starkiller steghide sublist3r tmux traceroute unrar virtualenv webext-foxyproxy webshells wireshark wordlists wpscan wpscan zaproxy zbar-tools zsh
+    apt-get install -y binwalk bloodhound burpsuite crackmapexec default-mysql-client dirb dirbuster dnsrecon enum4linux libimage-exiftool-perl exploitdb exploitdb ffuf firefox-esr ftp-ssl gcc-mingw-w64-x86-64 gedit git gobuster hashcat hashid hexer hydra john joomscan lightdm-remote-session-freerdp2 mariadb-client metasploit-framework netcat-traditional netdiscover nfs-common nikto nmap openvpn powershell-empire python3-pip python3-scapy python3-shodan rar seclists smbclient smbmap smtp-user-enum sqlite3 sqlmap sslscan starkiller steghide sublist3r tmux traceroute unrar virtualenv webext-foxyproxy webshells wireshark wordlists wpscan wpscan zaproxy zbar-tools zsh
 
 ## Une autre option, consiste à installer les méta packages Kali en fonction de votre besoin
 [KALI-META](https://www.kali.org/tools/kali-meta/ "Kali Meta")
