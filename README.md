@@ -100,7 +100,7 @@ Une autre option, qui permet d'installer directement la dernière version de Kal
     cd /tmp
     chmod 1777 /tmp
     apt -y download libcrypt1
-    dpkg-deb -x libcrypt1_1%3a4.4.25-2_amd64.deb  .
+    dpkg-deb -x libcrypt1_1%3a4.4.27-1.1_amd64.deb  .
     cp -av lib/x86_64-linux-gnu/* /lib/x86_64-linux-gnu/
     apt -y --fix-broken install
 
