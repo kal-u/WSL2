@@ -345,7 +345,7 @@ Exemple pour installer tous les outils Kali
 ### Installation de Network Miner
     cd /opt/network
     sudo apt install -y  mono-devel
-    wget https://www.netresec.com/?download=NetworkMiner -O /tmp/nm.zip
+    sudo wget https://www.netresec.com/?download=NetworkMiner -O /tmp/nm.zip
     unzip /tmp/nm.zip -d /opt/
     cd /opt/NetworkMiner*
     chmod +x NetworkMiner.exe
