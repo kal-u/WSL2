@@ -383,11 +383,6 @@ Exemple pour installer tous les outils Kali
     cd /opt/linux/privesc
     wget https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/master/lse.sh
     
-![image](https://user-images.githubusercontent.com/98317704/157004111-fed9e00c-6832-4d48-918d-82142712f8c2.png)
-
-
-
-
 ### Installation de Nessus
     Enregistrement sur le site : https://www.tenable.com/products/nessus/nessus-essentials
     Téléchargement du package pour Kali : Nessus-10.0.2-debian6_amd64.deb 
