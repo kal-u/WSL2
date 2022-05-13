@@ -382,7 +382,8 @@ Exemple pour installer tous les outils Kali
 ### Téléchargement de Linux Smart Enumeration
     cd /opt/linux/privesc
     wget https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/master/lse.sh
-    ![image](https://user-images.githubusercontent.com/98317704/157004111-fed9e00c-6832-4d48-918d-82142712f8c2.png)
+    
+![image](https://user-images.githubusercontent.com/98317704/157004111-fed9e00c-6832-4d48-918d-82142712f8c2.png)
 
 
 
