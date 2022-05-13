@@ -268,7 +268,7 @@ Exemple pour installer tous les outils Kali
 
 ### Récupération de LinPeas
     cd /opt/linux/privesc
-    wget https://raw.githubusercontent.com/carlospolop/PEASS-ng/master/linPEAS/linpeas.sh
+    wget https://github.com/carlospolop/PEASS-ng/releases/download/20220511/linpeas.sh
 
 ### Récupération de PowerUp
     cd /opt/windows/privesc
