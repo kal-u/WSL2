@@ -196,7 +196,7 @@ Exemple pour installer tous les outils Kali
   
 ### Création d'une arborescence dédiée
 
-    sudo chown kali:kali /opt
+    sudo chown -R kali:kali /opt
     mkdir -p /opt/recon
     mkdir -p /opt/linux/privesc
     mkdir -p /opt/windows/privesc
