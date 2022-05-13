@@ -246,8 +246,10 @@ Exemple pour installer tous les outils Kali
 
 ### Récupération de WinPeas
     cd /opt/windows
-    wget https://github.com/carlospolop/PEASS-ng/raw/master/winPEAS/winPEASexe/binaries/x86/Release/winPEASx86.exe
-    wget https://github.com/carlospolop/PEASS-ng/raw/master/winPEAS/winPEASexe/binaries/x64/Release/winPEASx64.exe
+    wget https://github.com/carlospolop/PEASS-ng/releases/download/20220511/winPEASx86.exe
+    wget https://github.com/carlospolop/PEASS-ng/releases/download/20220511/winPEASx86_ofs.exe
+    wget https://github.com/carlospolop/PEASS-ng/releases/download/20220511/winPEASx64.exe
+    wget https://github.com/carlospolop/PEASS-ng/releases/download/20220511/winPEASx64_ofs.exe
 
 ### Téléchargement de psexec
     cd /opt/windows
