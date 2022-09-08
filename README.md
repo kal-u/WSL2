@@ -270,6 +270,11 @@ Exemple pour installer tous les outils Kali
     cd /opt/linux/privesc
     wget https://github.com/carlospolop/PEASS-ng/releases/download/20220511/linpeas.sh
 
+### Récupération de PSPY
+      cd /opt/linux/privesc/
+      wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy64
+      wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy32
+
 ### Récupération de PowerUp
     cd /opt/windows/privesc
     wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Privesc/PowerUp.ps1
