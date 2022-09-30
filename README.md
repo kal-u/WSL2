@@ -279,6 +279,10 @@ Exemple pour installer tous les outils Kali
     cd /opt/windows/privesc
     wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Privesc/PowerUp.ps1
 
+### Récupération de MS17-010 Eternal Blue
+    cd /opt/windows/privesc
+    git clone https://github.com/helviojunior/MS17-010.git
+
 ### Réccupération du repo de scripts Powershell Nishang
     cd /opt/windows
     git clone https://github.com/samratashok/nishang.git
