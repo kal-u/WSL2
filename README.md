@@ -310,6 +310,13 @@ Exemple pour installer tous les outils Kali
     cd /opt/windows
     wget https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/credentials/Invoke-Kerberoast.ps1
 
+### Récupération d'un outil de collecte SNMPCHECK
+    cd /opt/windows
+    git clone https://gitlab.com/kalilinux/packages/snmpcheck.git
+    cd snmpcheck/
+    sudo gem install snmp
+    chmod u+x snmpcheck-1.9.rb
+
 ### Installation de Weevely
     cd /opt/web
     git clone https://github.com/epinna/weevely3.git
